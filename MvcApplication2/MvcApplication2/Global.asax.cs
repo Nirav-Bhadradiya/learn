@@ -19,7 +19,7 @@ namespace MvcApplication2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
 
-            Database.SetInitializer(new DropCreateDatabaseAlways<SalesErpdal>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SalesErpdal>());
         }
     }
 }

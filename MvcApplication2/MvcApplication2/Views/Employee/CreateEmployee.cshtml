@@ -1,6 +1,6 @@
-﻿@{
-    Layout = null;
-}
+﻿@using MvcApplication2.ViewModels
+@model CreateEmployeeViewModel
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +13,7 @@
                 document.getElementById('TxtSalary').value = "";
             }
         </script>
+        <script src="~/Scripts/Validations.js"></script>
     </head>
     <body>
       <div>
@@ -23,7 +24,7 @@
          First Name:
       </td>
       <td>
-         <input type="text" id="TxtFName" name="FirstName" value="" />
+         <input type="text" id="TxtFName" name="FirstName" value="@Model.FirstName" />
       </td>
    </tr>
    <tr>
@@ -36,7 +37,7 @@
         Last Name:
       </td>
       <td>
-         <input type="text" id="TxtLName" name="LastName" value="" />
+         <input type="text" id="TxtLName" name="LastName" value="@Model.LastName" />
       </td>
    </tr>
    <tr>
@@ -50,7 +51,7 @@
         Salary:
       </td>
       <td>
-         <input type="text" id="TxtSalary" name="Salary" value="" />
+         <input type="text" id="TxtSalary" name="Salary" value="@Model.Salary" />
       </td>
    </tr>
    <tr>
@@ -61,7 +62,7 @@
 
    <tr>
       <td colspan="2">
-         <input type="submit" name="BtnSubmit" value="Save Employee" />
+         <input type="submit" name="BtnSubmit" value="Save Employee" onclick="return IsValid();"/>
          <input type="submit" name="BtnSubmit" value="Cancel" />
          <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
       </td>

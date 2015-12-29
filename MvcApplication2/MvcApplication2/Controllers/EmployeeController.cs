@@ -23,9 +23,11 @@ namespace MvcApplication2.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
+        //[Authorize]
         public ActionResult Index()
         {
-            var employeeListViewModel = new EmployeeListViewModel();
+            var employeeListViewModel = new EmployeeListViewModel {UserName = User.Identity.Name};
+            //New Line
 
             var empBal = new EmployeeBusinessLayer();
             var employees = empBal.GetEmployees();
@@ -34,10 +36,10 @@ namespace MvcApplication2.Controllers
 
             foreach (var emp in employees)
             {
-                EmployeeViewModel empViewModel = new EmployeeViewModel
+                var empViewModel = new EmployeeViewModel
                 {
                     EmployeeName = emp.FirstName + " " + emp.LastName,
-                    Salary = emp.Salary.ToString("C"),
+                    Salary = emp.Salary.ToString(),
                     SalaryColor = emp.Salary > 15000 ? "yellow" : "green"
                 };
 
@@ -55,7 +57,7 @@ namespace MvcApplication2.Controllers
         /// <returns></returns>
         public ActionResult AddNew()
         {
-            return View("CreateEmployee");
+            return View("CreateEmployee", new CreateEmployeeViewModel());
         }
 
 
@@ -78,7 +80,14 @@ namespace MvcApplication2.Controllers
                     }
                     else
                     {
-                        return View("CreateEmployee");
+                        var vm = new CreateEmployeeViewModel
+                        {
+                            FirstName = e.FirstName,
+                            LastName = e.LastName,
+                            Salary = e.Salary.HasValue ? e.Salary.ToString() : ModelState["Salary"].Value.AttemptedValue
+                        };
+
+                        return View("CreateEmployee", vm); // Day 4 Change - Passing e here
                     }
                 case "Cancel":
                     return RedirectToAction("Index");

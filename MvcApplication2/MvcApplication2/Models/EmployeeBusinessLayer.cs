@@ -27,5 +27,15 @@ namespace MvcApplication2.Models
             salesDal.SaveChanges();
             return e;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
+        public bool IsValidUser(UserDetails u)
+        {
+            return u.UserName == "Admin" && u.Password == "Admin";
+        }
     }
 }
