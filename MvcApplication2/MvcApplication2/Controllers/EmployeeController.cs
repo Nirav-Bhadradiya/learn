@@ -23,7 +23,7 @@ namespace MvcApplication2.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             var employeeListViewModel = new EmployeeListViewModel {UserName = User.Identity.Name};
