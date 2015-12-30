@@ -28,14 +28,26 @@ namespace MvcApplication2.Models
             return e;
         }
 
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="u"></param>
         /// <returns></returns>
-        public bool IsValidUser(UserDetails u)
+        public UserStatus GetUserValidity(UserDetails u)
         {
-            return u.UserName == "Admin" && u.Password == "Admin";
+            if (u.UserName == "Admin" && u.Password == "Admin")
+            {
+                return UserStatus.AuthenticatedAdmin;
+            }
+            else if (u.UserName == "Nirav" && u.Password == "Nirav")
+            {
+                return UserStatus.AuthentucatedUser;
+            }
+            else
+            {
+                return UserStatus.NonAuthenticatedUser;
+            }
         }
     }
 }

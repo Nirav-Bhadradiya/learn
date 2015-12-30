@@ -26,16 +26,27 @@ namespace MvcApplication2.Controllers
             if (ModelState.IsValid)
             {
                 var bal = new EmployeeBusinessLayer();
-                if (bal.IsValidUser(u))
+                //New Code Start
+                var status = bal.GetUserValidity(u);
+                var isAdmin = false;
+
+                switch (status)
                 {
-                    FormsAuthentication.SetAuthCookie(u.UserName, false);
-                    return RedirectToAction("Index", "Employee");
+                    case UserStatus.AuthenticatedAdmin:
+                        isAdmin = true;
+                        break;
+                    case UserStatus.AuthentucatedUser:
+                        isAdmin = false;
+                        break;
+                    default:
+                        ModelState.AddModelError("CredentialError", "Invalid Username or Password");
+                        return View("Login");
                 }
-                else
-                {
-                    ModelState.AddModelError("CredentialError", "Invalid Username or Password");
-                    return View("Login");
-                }
+
+                FormsAuthentication.SetAuthCookie(u.UserName, false);
+                Session["IsAdmin"] = isAdmin;
+                return RedirectToAction("Index", "Employee");
+                //New Code End
             }
             else
             {

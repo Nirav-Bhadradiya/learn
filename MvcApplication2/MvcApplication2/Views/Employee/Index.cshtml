@@ -1,24 +1,19 @@
 ﻿@using MvcApplication2.ViewModels
 @model EmployeeListViewModel
+@{
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>MyView</title>
-</head>
-<body>
-    <div style="text-align: right">Hello, @Model.UserName </div>
-    <div><a href="/Authentication/Logout">Logout</a></div>
+@section TitleSection{
+    MyView
+}
 
-    <hr />
-
-    <hr />
-
-    <div>
-
+@section ContentBody{       
+    <div>        
+        @{
+            Html.RenderAction("GetAddNewLink");
+        }
         <table border="1">
-            <span style="font-size: 9pt;"></span>
             <tr>
                 <th>Employee Name</th>
                 <th>Salary</th>
@@ -32,9 +27,4 @@
             }
         </table>
     </div>
-    <div>
-        <a href="/Employee/AddNew">Add New</a>
-    </div>
-
-</body>
-</html>
+}
