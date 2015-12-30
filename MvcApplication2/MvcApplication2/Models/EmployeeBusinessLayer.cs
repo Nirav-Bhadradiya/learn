@@ -49,5 +49,16 @@ namespace MvcApplication2.Models
                 return UserStatus.NonAuthenticatedUser;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="employees"></param>
+        public void UploadEmployees(List<Employee> employees)
+        {
+            SalesErpdal salesDal = new SalesErpdal();
+            salesDal.Employees.AddRange(employees);
+            salesDal.SaveChanges();
+        }
     }
 }
