@@ -1,0 +1,5 @@
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\ViewModel\bin\Debug\ViewModel.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\ViewModel\bin\Debug\ViewModel.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\ViewModel\obj\Debug\ViewModel.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\ViewModel\obj\Debug\ViewModel.pdb

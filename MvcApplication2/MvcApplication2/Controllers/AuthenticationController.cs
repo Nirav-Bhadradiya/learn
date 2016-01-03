@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Security;
+using BussinessLayers;
 using MvcApplication2.Models;
 
 namespace MvcApplication2.Controllers
@@ -16,7 +17,6 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="u"></param>
         /// <returns></returns>
@@ -28,7 +28,7 @@ namespace MvcApplication2.Controllers
                 var bal = new EmployeeBusinessLayer();
                 //New Code Start
                 var status = bal.GetUserValidity(u);
-                var isAdmin = false;
+                bool isAdmin;
 
                 switch (status)
                 {
@@ -48,14 +48,10 @@ namespace MvcApplication2.Controllers
                 return RedirectToAction("Index", "Employee");
                 //New Code End
             }
-            else
-            {
-                return View("Login");
-            }
+            return View("Login");
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         public ActionResult Logout()
@@ -63,6 +59,5 @@ namespace MvcApplication2.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-
     }
 }

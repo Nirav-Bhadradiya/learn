@@ -3,7 +3,6 @@
 @{
 
     Layout = null;
-
 }
 
 <!DOCTYPE html>
@@ -12,7 +11,7 @@
 
 <head>
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <script src="~/Scripts/jquery-1.8.3.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
@@ -23,31 +22,28 @@
 
 <body>
 
-    <div>
-        @Html.ValidationMessage("CredentialError", new { style = "color:red;" })
-        @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
-        {
-
-            @Html.LabelFor(c => c.UserName)
-            @Html.TextBoxFor(x => x.UserName)
-            @Html.ValidationMessageFor(x => x.UserName)
-
-           
-
-            <br />
-
-            @Html.LabelFor(c => c.Password)
-
-            @Html.PasswordFor(x => x.Password)
-
-            <br />
+<div>
+    @Html.ValidationMessage("CredentialError", new {style = "color:red;"})
+    @using (Html.BeginForm("DoLogin", "Authentication", FormMethod.Post))
+    {
+        @Html.LabelFor(c => c.UserName)
+        @Html.TextBoxFor(x => x.UserName)
+        @Html.ValidationMessageFor(x => x.UserName)
 
 
-            <input type="submit" name="BtnSubmit" value="Login" />
+        <br/>
 
-        }
+        @Html.LabelFor(c => c.Password)
 
-    </div>
+        @Html.PasswordFor(x => x.Password)
+
+        <br/>
+
+
+        <input type="submit" name="BtnSubmit" value="Login"/>
+    }
+
+</div>
 
 </body>
 

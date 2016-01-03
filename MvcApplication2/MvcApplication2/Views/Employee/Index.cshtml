@@ -1,5 +1,4 @@
-﻿@using MvcApplication2.ViewModels
-@model EmployeeListViewModel
+﻿@model MvcApplication2.ViewModels.EmployeeListViewModel
 @{
     Layout = "~/Views/Shared/MyLayout.cshtml";
 }
@@ -8,8 +7,8 @@
     MyView
 }
 
-@section ContentBody{       
-    <div>        
+@section ContentBody{
+    <div>
         @{
             Html.RenderAction("GetAddNewLink");
         }
@@ -18,11 +17,11 @@
                 <th>Employee Name</th>
                 <th>Salary</th>
             </tr>
-            @foreach (EmployeeViewModel item in Model.Employees)
+            @foreach (var item in Model.Employees)
             {
                 <tr>
                     <td>@item.EmployeeName</td>
-                    <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    <td style="background-color: @item.SalaryColor">@item.Salary</td>
                 </tr>
             }
         </table>

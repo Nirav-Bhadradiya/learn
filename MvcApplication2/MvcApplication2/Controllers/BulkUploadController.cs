@@ -3,8 +3,9 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BussinessEntities;
+using BussinessLayers;
 using MvcApplication2.Filters;
-using MvcApplication2.Models;
 using MvcApplication2.ViewModels;
 
 namespace MvcApplication2.Controllers
@@ -23,39 +24,37 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [AdminFilter]
         public async Task<ActionResult> Upload(FileUploadViewModel model)
         {
-            int t1 = Thread.CurrentThread.ManagedThreadId;
-            List<Employee> employees = await Task.Factory.StartNew<List<Employee>>
+            var t1 = Thread.CurrentThread.ManagedThreadId;
+            var employees = await Task.Factory.StartNew
                 (() => GetEmployees(model));
-            int t2 = Thread.CurrentThread.ManagedThreadId;
-            EmployeeBusinessLayer bal = new EmployeeBusinessLayer();
+            var t2 = Thread.CurrentThread.ManagedThreadId;
+            var bal = new EmployeeBusinessLayer();
             bal.UploadEmployees(employees);
             return RedirectToAction("Index", "Employee");
         }
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         private List<Employee> GetEmployees(FileUploadViewModel model)
         {
             var employees = new List<Employee>();
-            StreamReader csvreader = new StreamReader(model.fileUpload.InputStream);
+            var csvreader = new StreamReader(model.fileUpload.InputStream);
             csvreader.ReadLine(); // Assuming first line is header
             while (!csvreader.EndOfStream)
             {
                 var line = csvreader.ReadLine();
                 if (line != null)
                 {
-                    var values = line.Split(',');//Values are comma separated
+                    var values = line.Split(','); //Values are comma separated
 
                     var e = new Employee
                     {
@@ -68,6 +67,5 @@ namespace MvcApplication2.Controllers
             }
             return employees;
         }
-
     }
 }

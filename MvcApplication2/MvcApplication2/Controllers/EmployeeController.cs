@@ -1,9 +1,10 @@
 ﻿using System;
-using MvcApplication2.Models;
-using MvcApplication2.ViewModels;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using BussinessEntities;
+using BussinessLayers;
 using MvcApplication2.Filters;
+using MvcApplication2.ViewModels;
 
 namespace MvcApplication2.Controllers
 {
@@ -12,7 +13,6 @@ namespace MvcApplication2.Controllers
         //
         // GET: /Test/
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         public string GetString()
@@ -22,7 +22,6 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         [Authorize]
@@ -31,7 +30,7 @@ namespace MvcApplication2.Controllers
         {
             var employeeListViewModel = new EmployeeListViewModel
             {
-                UserName = User.Identity.Name,
+                UserName = User.Identity.Name
                 //FooterData = new FooterViewModel
                 //{
                 //    CompanyName = "StepByStepSchools",
@@ -62,7 +61,6 @@ namespace MvcApplication2.Controllers
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         [AdminFilter]
@@ -85,7 +83,6 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <returns></returns>
         public ActionResult GetAddNewLink()
@@ -95,7 +92,6 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="e"></param>
         /// <param name="btnSubmit"></param>
@@ -114,28 +110,26 @@ namespace MvcApplication2.Controllers
                         empBal.SaveEmployee(e);
                         return RedirectToAction("Index");
                     }
-                    else
+                    var vm = new CreateEmployeeViewModel
                     {
-                        var vm = new CreateEmployeeViewModel
-                        {
-                            FirstName = e.FirstName,
-                            LastName = e.LastName,
-                            Salary = e.Salary.HasValue ? e.Salary.ToString() : ModelState["Salary"].Value.AttemptedValue,
-                            //FooterData = new FooterViewModel
-                            //{
-                            //    CompanyName = "StepByStepSchools",
-                            //    Year = DateTime.Now.Year.ToString()
-                            //},
-                            UserName = User.Identity.Name
-                        };
+                        FirstName = e.FirstName,
+                        LastName = e.LastName,
+                        Salary = e.Salary.HasValue ? e.Salary.ToString() : ModelState["Salary"].Value.AttemptedValue,
+                        //FooterData = new FooterViewModel
+                        //{
+                        //    CompanyName = "StepByStepSchools",
+                        //    Year = DateTime.Now.Year.ToString()
+                        //},
+                        UserName = User.Identity.Name
+                    };
 
-                        //Can be set to dynamic value
-                        //New Line
-                        return View("CreateEmployee", vm); // Day 4 Change - Passing e here
-                    }
+                    //Can be set to dynamic value
+                    //New Line
+                    return View("CreateEmployee", vm); // Day 4 Change - Passing e here
+                case "Cancel":
+                    return View("Index");
             }
             return new EmptyResult();
         }
     }
 }
-

@@ -3,7 +3,7 @@ using MvcApplication2.Logger;
 
 namespace MvcApplication2.Filters
 {
-    public class EmployeeExceptionFilter:HandleErrorAttribute
+    public class EmployeeExceptionFilter : HandleErrorAttribute
     {
         public override void OnException(ExceptionContext filterContext)
         {

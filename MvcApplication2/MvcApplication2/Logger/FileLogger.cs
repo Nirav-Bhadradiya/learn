@@ -8,10 +8,10 @@ namespace MvcApplication2.Logger
         public void LogException(Exception e)
         {
             File.WriteAllLines("C://Error//" + DateTime.Now.ToString("dd-MM-yyyy mm hh ss") + ".txt",
-                new string[] 
+                new[]
                 {
-                    "Message:"+e.Message,
-                    "Stacktrace:"+e.StackTrace
+                    "Message:" + e.Message,
+                    "Stacktrace:" + e.StackTrace
                 });
         }
     }

@@ -12,10 +12,9 @@ namespace MvcApplication2.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            Exception e = new Exception("Invalid Controller or/and Action Name");
-            HandleErrorInfo eInfo = new HandleErrorInfo(e, "Unknown", "Unknown");
+            var e = new Exception("Invalid Controller or/and Action Name");
+            var eInfo = new HandleErrorInfo(e, "Unknown", "Unknown");
             return View("Error", eInfo);
         }
-
     }
 }
