@@ -1,0 +1,21 @@
+﻿@using MvcApplication2.ViewModels
+@model DynamoDbListTableViewModel
+
+<h2>Index</h2>
+
+<div>
+
+    <table border="1">
+        <tr>
+            <th>Table Name</th>
+        </tr>
+        <span style="font-size: 9pt;"> </span>
+        @foreach (string item in Model.dynamoDbtableLists)
+            {
+            <tr>
+                <td>@item</td>
+            </tr>
+        }
+    </table>
+</div>
+

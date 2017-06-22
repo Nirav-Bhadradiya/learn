@@ -1,0 +1,22 @@
+﻿@using MvcApplication2.ViewModels
+@using Amazon.DynamoDBv2.Model;
+@model DynamoDbListTableViewModel
+
+<h2>DescribeTable / Attribute Names</h2>
+
+
+<div>
+
+    <table border="1">
+        <tr>
+            <th>Table Name</th>
+        </tr>
+        <span style="font-size: 9pt;"> </span>
+        @foreach (AttributeDefinition attr in Model.AttributeDefinition)
+            {
+            <tr>
+                <td>@attr.AttributeName</td>
+            </tr>
+        }
+    </table>
+</div>
