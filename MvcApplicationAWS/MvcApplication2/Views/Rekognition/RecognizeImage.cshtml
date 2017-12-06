@@ -1,0 +1,23 @@
+﻿@using DynamoDbCRUDApp.ViewModels
+@using Amazon.Rekognition;
+@using Amazon.Rekognition.Model;
+@model RekognitionViewModel
+
+<h2>RecognizeImage</h2>
+<div>
+
+    <table border="1">
+        <tr>
+            <th>Label Name</th>
+            <th>Confidence</th>
+        </tr>
+        <span style="font-size: 9pt;"> </span>
+        @foreach (Label attr in Model.Labels)
+            {
+            <tr>
+                <td>@attr.Name</td>
+                <td>@attr.Confidence</td>
+            </tr>
+        }
+    </table>
+</div>

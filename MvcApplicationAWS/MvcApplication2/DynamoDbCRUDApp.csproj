@@ -15,7 +15,7 @@
     <AssemblyName>DynamoDbCRUDApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -30,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,11 +42,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.3.14.1\lib\net45\AWSSDK.Core.dll</HintPath>
+      <HintPath>..\packages\AWSSDK.Core.3.3.19\lib\net45\AWSSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AWSSDK.DynamoDBv2, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.DynamoDBv2.3.3.4.13\lib\net45\AWSSDK.DynamoDBv2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.Rekognition, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Rekognition.3.3.5\lib\net45\AWSSDK.Rekognition.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.SQS, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SQS.3.3.3.2\lib\net45\AWSSDK.SQS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=7.1.3000.2254, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
@@ -124,12 +133,17 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\DynamoDbController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\RekognitionController.cs" />
+    <Compile Include="Controllers\SQSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AWSSimpleQueueService.cs" />
+    <Compile Include="Models\CloudSight.cs" />
     <Compile Include="Models\DynamoDbDemoService.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeBusinessLayer.cs" />
+    <Compile Include="Models\RekognitionService.cs" />
     <Compile Include="Models\UserDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Utility.cs" />
@@ -138,6 +152,8 @@
     <Compile Include="ViewModels\DynamoDbListTableViewModel.cs" />
     <Compile Include="ViewModels\EmployeeListViewModel .cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\RekognitionViewModel.cs" />
+    <Compile Include="ViewModels\SQSViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -171,12 +187,29 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.DynamoDBv2.3.3.4.13\analyzers\dotnet\cs\AWSSDK.DynamoDBv2.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.Rekognition.3.3.5\analyzers\dotnet\cs\AWSSDK.Rekognition.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.SQS.3.3.3.2\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DynamoDb\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DynamoDb\DescribeTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rekognition\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rekognition\CelebrityInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rekognition\RecognizeImage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rekognition\Image.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SQS\ListQueue.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -196,7 +229,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1577/</IISUrl>
+          <IISUrl>http://localhost/DynamoDbCRUDApp</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

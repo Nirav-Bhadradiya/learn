@@ -11,7 +11,7 @@ namespace MvcApplication2.Models
         DynamoDBContext context;
         public DynamoDbDemoService()
         {
-            Amazon.Util.ProfileManager.RegisterProfile("demo-aws-profile", "AKIAJTMO4NTJ5JE56YIA", "SJ+frc63/XYDpQNTLWMglAaOHER53h3vNuFBiFKi");
+            Amazon.Util.ProfileManager.RegisterProfile("demo-aws-profile", "AKIAJZD645WL6ZGOVXVA", "s5qaWsjAqC8mu+3BY2Vy/g6fYnpg1TBcp6ukZD1U");
             client = new AmazonDynamoDBClient(Amazon.RegionEndpoint.USEast1);
             context = new DynamoDBContext(client);
         }

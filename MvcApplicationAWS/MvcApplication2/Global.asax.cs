@@ -16,7 +16,8 @@ namespace MvcApplication2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-
+            //register access key and secret access key for the user
+            Amazon.Util.ProfileManager.RegisterProfile("demo-aws-profile", "AKIAITUBHUZMZVEINRUQ", "GyzcAV4++tPyZTtkwb9bGDCy5VZwhTJZxIUTH6kU");
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SalesErpdal>());
         }
     }

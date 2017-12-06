@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>"Upload Celebrity Picture & I will tell you the name.!"</h2>
+
+@using (Html.BeginForm("DetectCelebrity", "Rekognition", FormMethod.Post,
+                                        new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload Image:</label>
+    <input type="file" name="file" id="file" style="width: 100%;" />
+    <input type="submit" value="Upload" class="submit" />
+    <input type="button" value="CheckImage" onclick="location.href='@Url.Action("RecognizeImage","Rekognition")'" />
+}

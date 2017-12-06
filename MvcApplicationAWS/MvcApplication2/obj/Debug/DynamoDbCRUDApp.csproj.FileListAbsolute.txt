@@ -33,3 +33,10 @@ C:\learn\MvcApplicationAWS\MvcApplication2\obj\Debug\DynamoDbCRUDApp.dll
 C:\learn\MvcApplicationAWS\MvcApplication2\obj\Debug\DynamoDbCRUDApp.pdb
 C:\learn\MvcApplicationAWS\MvcApplication2\bin\JetBrains.Annotations.dll
 C:\learn\MvcApplicationAWS\MvcApplication2\bin\JetBrains.Annotations.xml
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.Rekognition.dll
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.Rekognition.pdb
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.Rekognition.xml
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.SQS.dll
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.SQS.pdb
+C:\learn\MvcApplicationAWS\MvcApplication2\bin\AWSSDK.SQS.xml
+C:\learn\MvcApplicationAWS\MvcApplication2\obj\Debug\DynamoDbCRUDApp.csprojResolveAssemblyReference.cache
