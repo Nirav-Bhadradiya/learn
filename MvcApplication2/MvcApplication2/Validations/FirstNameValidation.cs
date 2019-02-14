@@ -10,14 +10,7 @@ namespace MvcApplication2.Validations
             {
                 return new ValidationResult("Please Provide First Name");
             }
-            else
-            {
-                if (value.ToString().Contains("@"))
-                {
-                    return new ValidationResult("First Name should Not contain @");
-                }
-            }
-            return ValidationResult.Success;
+            return value.ToString().Contains("@") ? new ValidationResult("First Name should Not contain @") : ValidationResult.Success;
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using MvcApplication2.Filters;
 
 namespace MvcApplication2
 {
@@ -7,7 +7,8 @@ namespace MvcApplication2
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            //filters.Add(new HandleErrorAttribute());
+            filters.Add(new EmployeeExceptionFilter()); // user defined exception handler
         }
     }
 }

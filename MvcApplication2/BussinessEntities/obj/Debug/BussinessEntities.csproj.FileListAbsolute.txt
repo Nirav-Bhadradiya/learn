@@ -1,0 +1,4 @@
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessEntities\bin\Debug\BussinessEntities.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessEntities\bin\Debug\BussinessEntities.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessEntities\obj\Debug\BussinessEntities.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessEntities\obj\Debug\BussinessEntities.pdb

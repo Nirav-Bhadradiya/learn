@@ -1,0 +1,14 @@
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\BussinessLayers.dll.config
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\BussinessLayers.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\BussinessLayers.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\BussinessEntities.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\DataAccessLayer.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\EntityFramework.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\BussinessEntities.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\DataAccessLayer.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\EntityFramework.xml
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\obj\Debug\BussinessLayers.csprojResolveAssemblyReference.cache
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\obj\Debug\BussinessLayers.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\BussinessLayers\obj\Debug\BussinessLayers.pdb

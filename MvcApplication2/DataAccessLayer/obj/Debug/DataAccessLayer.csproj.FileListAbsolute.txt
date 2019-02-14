@@ -1,0 +1,12 @@
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\BussinessEntities.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\BussinessEntities.pdb
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Neo\documents\visual studio 2012\Projects\MvcApplication2\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

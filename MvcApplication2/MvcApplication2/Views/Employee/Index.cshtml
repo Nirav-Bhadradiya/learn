@@ -1,39 +1,29 @@
-﻿@using MvcApplication2.ViewModels
-@model EmployeeListViewModel
+﻿@model MvcApplication2.ViewModels.EmployeeListViewModel
+@{
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width" />
-<title>MyView</title>
-</head>
-<body>
-      <div style="text-align:right"> Hello, @Model.UserName </div>
+@section TitleSection{
+    MyView
+}
 
-  <hr />
-
-  <a  href="/Employee/AddNew">Add New</a>
-
+@section ContentBody{
     <div>
-
-       <table border="1"><span style="font-size: 9pt;"> 
-</span>
+        @{
+            Html.RenderAction("GetAddNewLink");
+        }
+        <table border="1">
             <tr>
                 <th>Employee Name</th>
                 <th>Salary</th>
             </tr>
-            @foreach (EmployeeViewModel item in Model.Employees)
+            @foreach (var item in Model.Employees)
             {
                 <tr>
                     <td>@item.EmployeeName</td>
-                    <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                    <td style="background-color: @item.SalaryColor">@item.Salary</td>
                 </tr>
             }
         </table>
     </div>
-    <div>
-        <a href="/Employee/AddNew">Add New</a>
-    </div>
-
-</body>
-</html>
+}
