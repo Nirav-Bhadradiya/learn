@@ -1,12 +1,22 @@
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
 ﻿@model MvcApplication2.ViewModels.BaseViewModel
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width"/>
+=======
+﻿@using MvcApplication2.ViewModels
+@model BaseViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
     <title>@RenderSection("TitleSection")</title>
     @RenderSection("HeaderSection", false)
 </head>
 <body>
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
 <div style="text-align: right">
     Hello, @Model.UserName
     <a href="/Authentication/Logout">Logout</a>
@@ -18,3 +28,16 @@
 @Html.Partial("Footer", Model.FooterData)
 </body>
 </html>
+=======
+    <div style="text-align: right">
+        Hello, @Model.UserName
+        <a href="/Authentication/Logout">Logout</a>
+    </div>
+    <hr />
+    <div>
+        @RenderSection("ContentBody")
+    </div>
+    @Html.Partial("Footer", Model.FooterData)
+</body>
+</html>
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts

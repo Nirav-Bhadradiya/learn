@@ -111,16 +111,35 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BulkUploadController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf:MvcApplication2/MvcApplication2/EmployeeMvc.csproj
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Filters\AdminFilter.cs" />
     <Compile Include="Filters\EmployeeExceptionFilter.cs" />
+=======
+    <Compile Include="DataAccessLayer\SalesERPDAL.cs" />
+    <Compile Include="Filters\AdminFilter.cs" />
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts:MvcApplication2/MvcApplication2/MvcApplication2.csproj
     <Compile Include="Filters\HeaderFooterFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf:MvcApplication2/MvcApplication2/EmployeeMvc.csproj
     <Compile Include="Logger\FileLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\FirstNameValidation.cs" />
+=======
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeBusinessLayer.cs" />
+    <Compile Include="Models\UserDetails.cs" />
+    <Compile Include="Models\UserStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\FirstNameValidation.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeListViewModel .cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\FooterViewModel.cs" />
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts:MvcApplication2/MvcApplication2/MvcApplication2.csproj
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -151,8 +170,11 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Employee\AddNewLink.cshtml" />
     <Content Include="Views\Shared\MyLayout.cshtml" />
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf:MvcApplication2/MvcApplication2/EmployeeMvc.csproj
     <Content Include="Views\BulkUpload\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+=======
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts:MvcApplication2/MvcApplication2/MvcApplication2.csproj
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,10 +1,18 @@
 ﻿using System;
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
 using System.Collections.Generic;
 using System.Web.Mvc;
 using BussinessEntities;
 using BussinessLayers;
 using MvcApplication2.Filters;
 using MvcApplication2.ViewModels;
+=======
+using MvcApplication2.Models;
+using MvcApplication2.ViewModels;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using MvcApplication2.Filters;
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
 
 namespace MvcApplication2.Controllers
 {
@@ -30,7 +38,11 @@ namespace MvcApplication2.Controllers
         {
             var employeeListViewModel = new EmployeeListViewModel
             {
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
                 UserName = User.Identity.Name
+=======
+                UserName = User.Identity.Name,
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
                 //FooterData = new FooterViewModel
                 //{
                 //    CompanyName = "StepByStepSchools",
@@ -83,6 +95,10 @@ namespace MvcApplication2.Controllers
 
 
         /// <summary>
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
+=======
+        /// 
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
         /// </summary>
         /// <returns></returns>
         public ActionResult GetAddNewLink()
@@ -112,6 +128,7 @@ namespace MvcApplication2.Controllers
                     }
                     var vm = new CreateEmployeeViewModel
                     {
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
                         FirstName = e.FirstName,
                         LastName = e.LastName,
                         Salary = e.Salary.HasValue ? e.Salary.ToString() : ModelState["Salary"].Value.AttemptedValue,
@@ -128,8 +145,32 @@ namespace MvcApplication2.Controllers
                     return View("CreateEmployee", vm); // Day 4 Change - Passing e here
                 case "Cancel":
                     return View("Index");
+=======
+                        var vm = new CreateEmployeeViewModel
+                        {
+                            FirstName = e.FirstName,
+                            LastName = e.LastName,
+                            Salary = e.Salary.HasValue ? e.Salary.ToString() : ModelState["Salary"].Value.AttemptedValue,
+                            //FooterData = new FooterViewModel
+                            //{
+                            //    CompanyName = "StepByStepSchools",
+                            //    Year = DateTime.Now.Year.ToString()
+                            //},
+                            UserName = User.Identity.Name
+                        };
+
+                        //Can be set to dynamic value
+                        //New Line
+                        return View("CreateEmployee", vm); // Day 4 Change - Passing e here
+                    }
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
             }
             return new EmptyResult();
         }
     }
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
 }
+=======
+}
+
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts

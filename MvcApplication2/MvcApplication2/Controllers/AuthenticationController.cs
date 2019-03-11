@@ -28,7 +28,11 @@ namespace MvcApplication2.Controllers
                 var bal = new EmployeeBusinessLayer();
                 //New Code Start
                 var status = bal.GetUserValidity(u);
+<<<<<<< 32d9abc822c052db022d491e907889fe53960eaf
                 bool isAdmin;
+=======
+                var isAdmin = false;
+>>>>>>> Day-6, HeaderFooterfilters and Custom Layouts
 
                 switch (status)
                 {
